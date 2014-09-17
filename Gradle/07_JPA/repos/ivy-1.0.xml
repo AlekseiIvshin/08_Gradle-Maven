@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="" module="07_JPA" revision="1.0" status="integration" publication="20140917155507">
+    <description/>
+  </info>
+  <configurations>
+    <conf name="archives" visibility="public" description="Configuration for archive artifacts."/>
+    <conf name="compile" visibility="private" description="Compile classpath for source set 'main'."/>
+    <conf name="default" visibility="public" description="Configuration for default artifacts." extends="runtime"/>
+    <conf name="runtime" visibility="private" description="Runtime classpath for source set 'main'." extends="compile"/>
+    <conf name="testCompile" visibility="private" description="Compile classpath for source set 'test'." extends="compile"/>
+    <conf name="testRuntime" visibility="private" description="Runtime classpath for source set 'test'." extends="runtime,testCompile"/>
+  </configurations>
+  <publications>
+    <artifact name="07_JPA" type="jar" ext="jar" conf="archives,runtime"/>
+  </publications>
+  <dependencies>
+    <dependency org="javax" name="javaee-api" rev="7.0" conf="compile-&gt;default"/>
+    <dependency org="ch.qos.logback" name="logback-classic" rev="1.1.2" conf="compile-&gt;default"/>
+    <dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.3.6.Final" conf="compile-&gt;default"/>
+    <dependency org="mysql" name="mysql-connector-java" rev="5.1.6" conf="compile-&gt;default"/>
+    <dependency org="ma.glasnost.orika" name="orika-core" rev="1.4.5" conf="compile-&gt;default"/>
+    <dependency org="junit" name="junit" rev="4.+" conf="testCompile-&gt;default"/>
+  </dependencies>
+</ivy-module>
