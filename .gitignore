@@ -22,5 +22,4 @@ package-info.java
 Gradle/*
 
 # Except for gradle files
-!Gradle/build.gradle
-!Gradle/.gradle/*
+!Gradle/*.gradle
