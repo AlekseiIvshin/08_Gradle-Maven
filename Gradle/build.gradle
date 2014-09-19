@@ -1,9 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 
 repositories {
 	mavenCentral()
 }
+
+mainClassName = "common.App"
 
 dependencies{
 	compile ('javax:javaee-api:7.0'){ transitive = true}
