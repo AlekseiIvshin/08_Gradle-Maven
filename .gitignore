@@ -17,3 +17,10 @@ hs_err_pid*
 
 # package-info
 package-info.java
+
+# Ignore all files from gradle
+Gradle/*
+
+# Except for gradle files
+!Gradle/build.gradle
+!Gradle/.gradle/*

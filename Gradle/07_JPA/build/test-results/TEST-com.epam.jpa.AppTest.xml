@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.epam.jpa.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2014-09-17T12:17:32" hostname="EPRUIZHW0173" time="0.001">
-  <properties/>
-  <testcase name="testApp" classname="com.epam.jpa.AppTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
