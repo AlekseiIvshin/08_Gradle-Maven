@@ -1,12 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
 
 repositories {
 	mavenCentral()
 }
 
-mainClassName = "common.App"
+build.dependsOn(javadoc)
 
 dependencies{
 	compile ('javax:javaee-api:7.0'){ transitive = true}
@@ -20,14 +19,6 @@ dependencies{
 sourceCompatibility = 1.7
 version = '1.0'
 
-
-uploadArchives {
-	repositories{
-		flatDir {
-			dirs 'repos'
-		}
-	}
-}
 
 jar {
 	manifest {
