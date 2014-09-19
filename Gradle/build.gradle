@@ -26,7 +26,24 @@ uploadArchives {
 	}
 }
 
-task showProp << {
-	println sourceSets.main.output.resourcesDir
-	println sourceSets.main.output.classesDir
+jar {
+	manifest {
+		attributes 'Main-Class': 'common.App'
+		def manifestCp  = configurations.runtime.files.collect {
+			File file = it
+			"lib/${file.name}"
+		}.join(' ')
+		
+		configurations.runtime.getAllDependencies().withType(ProjectDependency).each { dep->
+			def depProj = dep.getDependencyProject()
+			def libFilePath = project(depProj.path).listDir.list().collect{ inFile-> "lib/${file}" }.join(' ')
+			logger.info("Adding libs from project ${depProj.name}: [- ${libFilePath} -]")
+			manifestCp += ' '+libFilePath
+		}
+		
+		logger.lifecycle("")
+		logger.lifecycle("-- Manifest-CLass-Path: ${manifestCp}")
+		attributes 'Class-Path': manifestCp
+	}
 }
+
