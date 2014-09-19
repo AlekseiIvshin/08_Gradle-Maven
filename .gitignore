@@ -20,6 +20,8 @@ package-info.java
 
 # Ignore all files from gradle
 Gradle/*
+Maven/*
 
 # Except for gradle files
 !Gradle/build.gradle
+!Maven/pom.xml
